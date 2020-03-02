@@ -1,0 +1,7 @@
+dance: false
+
+dict:
+- one
+- two
+- three:
+  - four: true

@@ -1,0 +1,17 @@
+# Fontiles configuration file
+
+# Metadata about this instance of Fontiles
+- name: Fontiles
+- description: A self-hosted font server
+- hoster: '@encadyma'
+- host: fonts.modoes.ml
+
+# font_paths (required) - Defines paths for where fonts are located (in Fontile form)
+- font_paths:
+- "./fonts"
+
+# fonts (required) - a list of font families that Fontiles should search for
+- fonts:
+- Fascinate Inline
+- Righteous
+- Source Sans Pro

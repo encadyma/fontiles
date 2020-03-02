@@ -1,0 +1,16 @@
+# Font family definition file
+
+name: Fascinate Inline
+author: Astigmatic
+slug: fascinate-inline
+license: ./OFL.txt
+license_type: OFL1.1
+
+members:
+- name: Regular
+  slug: regular
+  weight: 400
+  # only ttf for first iteration of Fontiles
+  ttf: ./FascinateInline-Regular.ttf
+- name: Bold
+  
