@@ -2,56 +2,62 @@
 
 name: Source Sans Pro
 author: Paul D. Hunt
-slug: source-sans-pro
+slug: SourceSansPro
 license: ./OFL.txt
 license_type: OFL1.1
 
 members:
 - name: Extra Light
-  slug: extra-light
+  slug: ExtraLight
   weight: 200
   ttf: ./SourceSansPro-ExtraLight.ttf
 - name: Extra Light Italic
-  slug: extra-light-italic
+  slug: ExtraLightItalic
+  style: italic
   weight: 200
   ttf: ./SourceSansPro-ExtraLightItalic.ttf
 - name: Light
-  slug: light
+  slug: Light
   weight: 300
   ttf: ./SourceSansPro-Light.ttf
 - name: Light Italic
-  slug: light-italic
+  slug: LightItalic
+  style: italic
   weight: 300
   ttf: ./SourceSansPro-LightItalic.ttf
 - name: Regular
-  slug: regular
+  slug: Regular
   weight: 400
   ttf: ./SourceSansPro-Regular.ttf
 - name: Regular Italic
-  slug: regular-italic
+  slug: RegularItalic
+  style: italic
   weight: 400
   ttf: ./SourceSansPro-Italic.ttf
 - name: Semi-bold
-  slug: semibold
+  slug: SemiBold
   weight: 600
   ttf: ./SourceSansPro-SemiBold.ttf
 - name: Semi-bold Italic
-  slug: semibold-italic
+  slug: SemiBoldItalic
+  style: italic
   weight: 600
   ttf: ./SourceSansPro-SemiBoldItalic.ttf
 - name: Bold
-  slug: bold
+  slug: Bold
   weight: 700
   ttf: ./SourceSansPro-Bold.ttf
 - name: Bold Italic
-  slug: bold-italic
+  slug: BoldItalic
+  style: italic
   weight: 700
   ttf: ./SourceSansPro-BoldItalic.ttf
 - name: Black
-  slug: black
+  slug: Black
   weight: 900
   ttf: ./SourceSansPro-Black.ttf
 - name: Black Italic
-  slug: black-italic
+  slug: BlackItalic
+  style: italic
   weight: 900
   ttf: ./SourceSansPro-BlackItalic.ttf
