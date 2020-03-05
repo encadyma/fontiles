@@ -1,0 +1,57 @@
+# Font family definition file
+
+name: Source Sans Pro
+author: Paul D. Hunt
+slug: source-sans-pro
+license: ./OFL.txt
+license_type: OFL1.1
+
+members:
+- name: Extra Light
+  slug: extra-light
+  weight: 200
+  ttf: ./SourceSansPro-ExtraLight.ttf
+- name: Extra Light Italic
+  slug: extra-light-italic
+  weight: 200
+  ttf: ./SourceSansPro-ExtraLightItalic.ttf
+- name: Light
+  slug: light
+  weight: 300
+  ttf: ./SourceSansPro-Light.ttf
+- name: Light Italic
+  slug: light-italic
+  weight: 300
+  ttf: ./SourceSansPro-LightItalic.ttf
+- name: Regular
+  slug: regular
+  weight: 400
+  ttf: ./SourceSansPro-Regular.ttf
+- name: Regular Italic
+  slug: regular-italic
+  weight: 400
+  ttf: ./SourceSansPro-Italic.ttf
+- name: Semi-bold
+  slug: semibold
+  weight: 600
+  ttf: ./SourceSansPro-SemiBold.ttf
+- name: Semi-bold Italic
+  slug: semibold-italic
+  weight: 600
+  ttf: ./SourceSansPro-SemiBoldItalic.ttf
+- name: Bold
+  slug: bold
+  weight: 700
+  ttf: ./SourceSansPro-Bold.ttf
+- name: Bold Italic
+  slug: bold-italic
+  weight: 700
+  ttf: ./SourceSansPro-BoldItalic.ttf
+- name: Black
+  slug: black
+  weight: 900
+  ttf: ./SourceSansPro-Black.ttf
+- name: Black Italic
+  slug: black-italic
+  weight: 900
+  ttf: ./SourceSansPro-BlackItalic.ttf

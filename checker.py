@@ -51,6 +51,14 @@ FONT PATHS ({} defined):
         len(cfg['fonts'])
     ))
 
+    # Check duplicates of fonts and font paths
+    if len(set(cfg['font_paths'])) < len(cfg['font_paths']):
+        print("WARNING: Checker found duplicate font paths listed.\n")
+
+    if len(set(cfg['fonts'])) < len(cfg['fonts']):
+        print("WARNING: Checker found duplicate fonts listed.\n")
+    
+
     # Now that a configuration has been found,
     # it's time to investigate that each font
     # is located properly.
@@ -112,7 +120,6 @@ def check_font(font_name, font_paths):
     if not cfg.keys() >= cfg_required_keys:
         return ret_error("Missing essential keys: {}".format(cfg_required_keys - cfg.keys()))
 
-    # Start warning checking
     warnings = []
 
     # warning 1: undefined author
@@ -132,14 +139,26 @@ def check_font(font_name, font_paths):
     if len(cfg['members']) <= 0:
         warnings += ['no members in family']
 
+    member_names, member_slugs = [], []
+
     for index, member in enumerate(cfg['members']):
         # warning 5: member has no name
         if 'name' not in member:
             warnings += ['member o' + str(index) + ' of family has no name']
             member['name'] = 'o' + str(index)
+        # warning 5.5: member name already exists
+        if member['name'] in member_names:
+            warnings += ['duplicate member of name ' + member['name']]
+            continue
+        member_names += [member['name']]
         # warning 6: member has no slug
         if 'slug' not in member:
             warnings += ['member ' + member['name'] + ' has no slug']
+            continue
+        if member['slug'] in member_slugs:
+            warnings += ['duplicate member of slug ' + member['slug']]
+            continue
+        member_slugs += [member['slug']]
         # warning 7: member has no weight
         if 'weight' not in member:
             warnings += ['member ' + member['name'] + ' has no weight']

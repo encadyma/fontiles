@@ -12,5 +12,3 @@ members:
   weight: 400
   # only ttf for first iteration of Fontiles
   ttf: ./FascinateInline-Regular.ttf
-- name: Bold
-  

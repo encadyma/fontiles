@@ -1,7 +1,13 @@
-dance: false
+# Font family definition file
 
-dict:
-- one
-- two
-- three:
-  - four: true
+name: Righteous
+author: Astigmatic
+slug: righteous
+license: ./OFL.txt
+license_type: OFL1.1
+
+members:
+- name: Regular
+  slug: regular
+  weight: 400
+  ttf: ./Righteous-Regular.ttf
