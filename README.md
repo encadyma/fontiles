@@ -1,6 +1,8 @@
 # Fontiles
 Open source font server (MVP in development), written for self hosting.
 
+![Fontiles (MVP)](https://i.fluffy.cc/mx60xwGKXt8shTn1nZqwCnMfGcPfXKFP.png)
+
 Currently, Fontiles is an MVP in development, so it is not recommended for production use and is subject to breaking changes. If you would like support, please open a Github issue and tag me (@encadyma).
 
 ## What does it have?
