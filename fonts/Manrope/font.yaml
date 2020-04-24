@@ -1,0 +1,37 @@
+# Font family definition file
+
+name: Manrope
+author: Mikhail Sharanda
+slug: manrope
+license: ./OFL.txt
+license_type: OFL1.1
+
+members:
+- name: ExtraLight
+  slug: ExtraLight
+  weight: 200
+  ttf: ./static/Manrope-ExtraLight.ttf
+- name: Light
+  slug: Light
+  weight: 300
+  ttf: ./static/Manrope-Light.ttf
+- name: Regular
+  slug: Regular
+  weight: 400
+  ttf: ./static/Manrope-Regular.ttf
+- name: Medium
+  slug: Medium
+  weight: 500
+  ttf: ./static/Manrope-Medium.ttf
+- name: Semi-bold
+  slug: SemiBold
+  weight: 600
+  ttf: ./static/Manrope-SemiBold.ttf
+- name: Bold
+  slug: Bold
+  weight: 700
+  ttf: ./static/Manrope-Bold.ttf
+- name: Extra Bold
+  slug: ExtraBold
+  weight: 800
+  ttf: ./static/Manrope-ExtraBold.ttf

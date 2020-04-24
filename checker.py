@@ -45,7 +45,7 @@ FONT PATHS ({} defined):
 # OF FONTS:\t{}
 """.format(
         cfg['name'], cfg['host'],
-        "https://{}/ping".format(cfg['host']),
+        "{}/ping".format(cfg['host']),
         len(cfg['font_paths']),
         "\n".join(cfg['font_paths']),
         len(cfg['fonts'])
@@ -163,7 +163,7 @@ def check_font(font_name, font_paths):
         if 'weight' not in member:
             warnings += ['member ' + member['name'] + ' has no weight']
         # warning 8: member has no ttf or is not found
-        if 'ttf' not in member:
+        if 'ttf' not in member or not ensure_file_exists(os.path.join(font_path, member['ttf'])):
             warnings += ['member ' + member['name'] + ' does not have ttf (src)']
 
     # Begin emitting warnings if present
@@ -193,5 +193,6 @@ def ensure_check():
     with open(os.devnull, "w") as f, contextlib.redirect_stdout(f):
         return check()
 
-print("Starting checker.py")
-check()
+if __name__ == "__main__":
+    print("Starting checker.py")
+    check()

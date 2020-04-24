@@ -1,0 +1,54 @@
+# Font family definition file
+
+name: Josefin Slab
+author: Santiago Orozco
+slug: josefin-slab
+license: ./OFL.txt
+license_type: OFL1.1
+
+members:
+- name: Thin
+  slug: Thin
+  weight: 100
+  ttf: ./JosefinSlab-Thin.ttf
+- name: Thin Italic
+  slug: ThinItalic
+  style: italic
+  weight: 100
+  ttf: ./JosefinSlab-ThinItalic.ttf
+- name: Light
+  slug: Light
+  weight: 300
+  ttf: ./JosefinSlab-Light.ttf
+- name: Light Italic
+  slug: LightItalic
+  style: italic
+  weight: 300
+  ttf: ./JosefinSlab-LightItalic.ttf
+- name: Regular
+  slug: Regular
+  weight: 400
+  ttf: ./JosefinSlab-Regular.ttf
+- name: Regular Italic
+  slug: RegularItalic
+  style: italic
+  weight: 400
+  ttf: ./JosefinSlab-Italic.ttf
+- name: Semi-bold
+  slug: SemiBold
+  weight: 600
+  ttf: ./JosefinSlab-SemiBold.ttf
+- name: Semi-bold Italic
+  slug: SemiBoldItalic
+  style: italic
+  weight: 600
+  ttf: ./JosefinSlab-SemiBoldItalic.ttf
+- name: Bold
+  slug: Bold
+  weight: 700
+  ttf: ./JosefinSlab-Bold.ttf
+- name: Bold Italic
+  slug: BoldItalic
+  style: italic
+  weight: 700
+  ttf: ./JosefinSlab-BoldItalic.ttf

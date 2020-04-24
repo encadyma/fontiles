@@ -4,7 +4,7 @@
 name: Fontiles
 description: A self-hosted font server
 hoster: '@encadyma'
-host: http://bolide.ocf.berkeley.edu:5000
+host: http://localhost:5000
 
 # font_paths (required) - Defines paths for where fonts are located (in Fontile form)
 font_paths:
@@ -15,3 +15,5 @@ fonts:
 - Fascinate Inline
 - Righteous
 - Source Sans Pro
+- Josefin Slab
+- Manrope

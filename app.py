@@ -3,7 +3,6 @@ from generator import fetch_config, fetch_font_map, form_font_face
 
 app = Flask(__name__)
 
-
 """
 ABOUT ROUTING
 
