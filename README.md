@@ -28,7 +28,7 @@ To get started with your own setup, you can fork the Fontiles server. The starti
 
 You will also need to specify at least one fonts folder. An example is already provided in this repository under `fonts/`.
 
-To add a new font family, create a directory and place all the font assets inside [1]. Create a new Fontiles configuration `font.yaml` where you can specify important font metadata and the font family's members [(example config)](https://github.com/encadyma/fontiles/blob/master/fonts/Source%20Sans%20Pro/font.yaml).
+To add a new font family, create a directory and place all the font assets inside [1]. Create a new Fontiles configuration `font.yaml` where you can specify important font metadata and the font family's members [(example config)](https://github.com/encadyma/fontiles/blob/master/fonts/Source%20Sans%20Pro/font.yaml). Add the directory name to the `fonts` list in `app.yaml`, and Fontiles should be able to recognize it!
 
 You can check that your configuration works by running `python3 checker.py`, which will validate your config and return what Fontiles will see.
 
