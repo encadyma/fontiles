@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>Fontiles (beta)</title>
+    <style>
+        @import url('/fonts/josefin-slab/full.css');
+        @import url('/fonts/manrope/full.css');
+        html, body {
+            font-family: Manrope, sans-serif;
+            font-weight: 400;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-family: 'Josefin Slab', sans-serif;
+            font-weight: 700;
+        }
+        .f-hero {
+            background: #ED4C67;
+            color: rgb(241, 226, 229);
+            padding: 80px 40px 40px;
+        }
+        .f-hero-inner, .f-inner {
+            margin: 0 auto;
+            width: 80vw;
+            max-width: 1500px;
+        }
+        .f-hero-inner > h1 {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            font-size: 4.8em;
+        }
+        .f-hero-inner > .f-hero-h1-fontdesc {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .f-hero-inner-desc {
+            font-size: 1.2em;
+        }
+        #f-listing h1 {
+            font-size: 2.8em;
+        }
+        .f-listing-fonts {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .f-listing-font-item {
+            background: rgb(230,120,28);
+            background: linear-gradient(200deg, rgba(230,120,28,1) 0%, rgba(247,153,16,1) 30%, rgba(247,159,31,1) 100%); 
+            font-size: 1.4em;
+            padding: 30px 30px 60px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px 4px rgba(161, 161, 161, 0.1);
+            transition: box-shadow 200ms ease;
+        }
+        .f-listing-font-item:hover {
+            box-shadow: 0 4px 20px 6px rgba(100, 100, 100, 0.4);
+            transition: box-shadow 200ms ease;
+        }
+        .f-listing-font-name {
+            font-weight: 700;
+            color: #fff;
+        }
+        .f-listing-font-slug {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .f-listing-font-item-rsrc {
+            color: rgb(214, 90, 110);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .f-listing-font-item-rsrc:visited {
+            color: #B53471;
+        }
+        footer {
+            background:rgb(36, 36, 36);
+            padding: 30px 40px 60px;
+            color: #fff;
+            margin-top: 40px;
+        }
+        footer > .f-inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        footer a {
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="f-body">
+        <header class="f-hero">
+            <div class="f-hero-inner">
+                <h1>{{cfg['name']}}</h1>
+                <a class="f-hero-h1-fontdesc">&lt;font: Josefin Slab; version: {{cfg['appVersion']}}&gt;</a>
+                <p class="f-hero-inner-desc">{{cfg['description'] or 'A self-hosted font server' }}</p>
+            </div>
+        </header>
+        <section id="f-listing">
+            <div class="f-inner">
+                <h1>All Fonts</h1>
+                {% if cfg['fonts'] %}
+                <ul class="f-listing-fonts">
+                    {% for font in cfg['fonts'] %}
+                    <li class="f-listing-font-item">
+                        <span class="f-listing-font-name">{{cfg['fonts'][font]['name']}}</span>
+                        <span class="f-listing-font-slug">#{{cfg['fonts'][font]['slug']}}</span>
+                        <a class="f-listing-font-item-rsrc" href="/fonts/{{font}}/full.css" target="_blank">(full.css)</a>
+                        <a class="f-listing-font-item-rsrc" href="{{cfg['fonts'][font]['configPath']}}" target="_blank">(font.json)</a>
+                        <a class="f-listing-font-item-rsrc" href="{{cfg['fonts'][font]['licensePath']}}" target="_blank">(LICENSE)</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>Sorry, this installation of Fontiles does not have fonts.</p>
+                {% endif %}
+            </div>
+        </section>
+        <footer>
+            <div class="f-inner">
+                <p>Copyright &copy; {{cfg['hoster']}} 2020</p>
+                <p>Powered by <a href="https://github.com/encadyma/fontiles">Fontiles</a>.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

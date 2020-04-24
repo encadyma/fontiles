@@ -1,5 +1,5 @@
-from flask import Flask, request, Response, jsonify
-from generator import fetch_config, fetch_font_map, form_font_face
+from flask import Flask, request, Response, jsonify, safe_join, send_file, render_template
+from generator import fetch_config, fetch_raw_config, fetch_font_map, form_font_face, generate_font_map
 
 app = Flask(__name__)
 
@@ -27,7 +27,8 @@ $HOST/config.json
 
 @app.route('/')
 def hello():
-    return 'test world'
+    cfg = fetch_config()
+    return render_template('index.html', cfg=cfg)
 
 @app.route('/ping')
 def ping():
@@ -40,6 +41,17 @@ def config():
 @app.route('/fonts/<font_slug>/font.json')
 def font_config(font_slug):
     return jsonify(fetch_font_map(font_slug))
+
+@app.route('/fonts/<font_slug>/static/<member_slug>.ttf')
+def font_static_ttf(font_slug, member_slug):
+    fcfg = generate_font_map(font_slug, include_raw=True)
+
+    if member_slug in fcfg['members']:
+        raw_ttf = fcfg['members'][member_slug]['raw_ttf']
+        return send_file(safe_join(fcfg['rawFontPath'], raw_ttf))
+
+    # Replace with proper 404
+    return jsonify("cannot find")
 
 @app.route('/fonts/<font_slug>/LICENSE')
 def font_license(font_slug):

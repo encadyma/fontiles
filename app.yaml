@@ -2,7 +2,7 @@
 
 # Metadata about this instance of Fontiles
 name: Fontiles
-description: A self-hosted font server
+description: An open source font server, delivering beautiful fonts to the general public.
 hoster: '@encadyma'
 host: http://localhost:5000
 

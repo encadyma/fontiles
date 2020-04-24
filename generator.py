@@ -18,7 +18,7 @@ def fetch_raw_config():
     with open('app.yaml') as cf:
         return yaml.load(cf, Loader=yaml.FullLoader)
 
-def generate_config():
+def generate_config(include_raw=False):
     """
     Return an application config based on a correct
     app.yaml with the following properties:
@@ -100,7 +100,7 @@ def fetch_font_path(font_slug):
 
     return FONT_PATHS[font_slug]
 
-def generate_font_map(font_slug):
+def generate_font_map(font_slug, include_raw=False):
     """
     Generate a font config based on font.yaml
     with the following properties:
@@ -120,7 +120,10 @@ def generate_font_map(font_slug):
     ```
     """
 
-    cfg = fetch_config()
+    if include_raw:
+        cfg = generate_config()
+    else:
+        cfg = fetch_config()
     font_path = fetch_font_path(font_slug)
 
     if not font_path:
@@ -137,6 +140,9 @@ def generate_font_map(font_slug):
         "members": {}
     }
 
+    if include_raw:
+        generated_cfg["rawFontPath"] = font_path
+
     for member in fcfg["members"]:
         generated_cfg["members"][member["slug"]] = {
             "name": member["name"],
@@ -149,6 +155,9 @@ def generate_font_map(font_slug):
                 member["slug"]
             ))
         }
+        if include_raw:
+            generated_cfg["members"][member["slug"]]["raw_ttf"] = member["ttf"]
+
 
     return generated_cfg
 
@@ -169,7 +178,7 @@ def form_font_face(app_host, font_cfg, member_slug):
     font-weight: {};
     src: local("{}"),
          local("{}"),
-         url("{}") format("ttf");
+         url("{}") format("truetype");
 }}""".format(
     dquote_long_names(font_cfg["name"]),
     font_member["style"],
